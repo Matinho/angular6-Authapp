@@ -5,7 +5,6 @@ import { Router,
         CanActivate
       } from '@angular/router';
 import { AuthService } from './auth.service';
-import { RouterStateSnapshot } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,7 @@ export class AuthGuardService implements CanActivate {
 
     console.log(next);
 
-    if( this.auth.isAuthenticated() ) {
+    if ( this.auth.isAuthenticated() ) {
       console.log('Pasó el guard');
       return true;
     } else {
